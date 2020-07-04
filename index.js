@@ -17,9 +17,7 @@ let mapToSquare = (array) => {
 }
 
 let reduceToTotal = (array,start = 0) => {
-   return array.reduce((el,result) =>{
-      return result += el
-   }, start)
+   return array.reduce((el,result) => {return result += el}, start)
 }
 
 let reduceToAllTrue = (array) => {
@@ -28,5 +26,4 @@ let reduceToAllTrue = (array) => {
 
 let reduceToAnyTrue = (array) => {
    return array.some(el => {return !!el})
-
 }
