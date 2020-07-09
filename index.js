@@ -16,11 +16,10 @@ function mapToSquare(sourceArray) {
 }
 
 function reduceToTotal(sourceArray, startingPoint = 0) {
-    // let i = startingPoint
-    const reducer = (accumulator, item) => {
-        return accumulator + item
+    const sum = (total, amount) => {
+        return total + amount
     }
-    return sourceArray.reduce(reducer, startingPoint)
+    return sourceArray.reduce(sum, startingPoint)
 }
 
 function reduceToAllTrue(sourceArray){
