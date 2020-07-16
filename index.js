@@ -1,50 +1,56 @@
 // Your code here
 
-function mapToNegativize(array) {
-    return array.map(element => element * -1);
-}
-
-function mapToNoChange(array) {
-    return array;
-}
-
-function mapToDouble(array) {
-    return array.map(element => element * 2);
-}
-
-function mapToSquare(array) {
-    return array.map(element => element * element);
-}
-
-function reduceToTotal(array, startingPoint) {
-    return array.reduce(function(total, element) {
-        if (startingPoint) {
-            total += startingPoint/2;
-        }
-        return element + total});
-}
-
-function reduceToAllTrue(array) {
-    return array.reduce(function(total, element) {
-        for (let i = 0; i < array.length; i ++) {
-            if (element == false) {
-                return false;
-            }
-        }
-        return true;
-    });
-}
-
-function reduceToAnyTrue(array) {
-    return array.reduce(function(total, element) {
-        for (let i = 0; i < array.length; i ++) {
-            if (element == true) {
-                return true;
-            }
-
-        }
-        return false;
-    });
-}
-
+function mapToNegativize(src) {
+    let r = []
+    for (let i = 0; i < src.length; i++ ) {
+      r.push(-1 * src[i])
+    }
+    return r
+  }
+  
+  function mapToNoChange(src) {
+    let r = []
+    for (let i = 0; i < src.length; i++ ) {
+      r.push(src[i])
+    }
+    return r
+  }
+  
+  function mapToDouble(src) {
+    let r = []
+    for (let i = 0; i < src.length; i++ ) {
+      r.push(2 * src[i])
+    }
+    return r
+  }
+  
+  function mapToSquare(src) {
+    let r = []
+    for (let i = 0; i < src.length; i++ ) {
+      r.push(src[i] * src[i])
+    }
+    return r
+  }
+  
+  function reduceToTotal(src, startingPoint=0) {
+    let total = startingPoint
+    for (let i = 0; i < src.length; i++ ) {
+      total = total + src[i]
+    }
+    return total
+  }
+  
+  function reduceToAllTrue(src) {
+    for (let i = 0; i < src.length; i++ ) {
+      if (!src[i]) return false
+    }
+    return true
+  }
+  
+  function reduceToAnyTrue(src) {
+    for (let i = 0; i < src.length; i++ ) {
+      if (src[i]) return true
+    }
+    return false
+  }
 
